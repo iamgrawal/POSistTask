@@ -87,6 +87,8 @@ var object = {
 	"children": [object]
 };
 
+var showDataClicked = false;
+
 // ************** Generate the tree diagram	 *****************
 var margin = {
 		top: 20,
@@ -124,79 +126,84 @@ update(root);
 d3.select(self.frameElement).style("height", "500px");
 
 var showData = () => {
-	var  data = document.getElementById('data');
-	data.innerText = `{
-		"name": "Genesis Node",
-		"timestamp": new Date(),
-		"data": "0",
-		"nodeNumber": "0",
-		"nodeId": "0",
-		"referenceNodeId": null,
-		"childReferenceNodeId": [
-			"1",
-			"2"
-		],
-		"genesisReferenceNodeId": null,
-		"HashValue": null,
-		"parent": null,
-		"children": [
-			{
-				"name": "Child Node 1-1",
-				"timestamp": new Date(),
-				"data": "1-1",
-				"nodeNumber": "11",
-				"nodeId": "11",
-				"referenceNodeId": "0",
-				"childReferenceNodeId": [
-					"2"
-				],
-				"genesisReferenceNodeId": null,
-				"HashValue": null,
-				"parent": "Genesis Node",
-				"children": [
-					{
-						"name": "Child Node 2-1",
-						"timestamp": new Date(),
-						"data": "2-1",
-						"nodeNumber": "22",
-						"nodeId": "22",
-						"referenceNodeId": "11",
-						"childReferenceNodeId": [],
-						"genesisReferenceNodeId": null,
-						"HashValue": null,
-						"parent": "Genesis Node",
-						"children": []
-					},
-					{
-						"name": "Child Node 2-2",
-						"timestamp": new Date(),
-						"data": "2-2",
-						"nodeNumber": "22",
-						"nodeId": "22",
-						"referenceNodeId": "11",
-						"childReferenceNodeId": [],
-						"genesisReferenceNodeId": null,
-						"HashValue": null,
-						"parent": "Genesis Node",
-						"children": []
-					}
-				]
-			},
-			{
-				"name": "Child Node 1-2",
-				"timestamp": new Date(),
-				"data": "1-2",
-				"nodeNumber": "12",
-				"nodeId": "12",
-				"referenceNodeId": "0",
-				"childReferenceNodeId": [],
-				"genesisReferenceNodeId": null,
-				"HashValue": null,
-				"parent": "Genesis Node",
-				"children": []
-			}
-		]
-	}`;
+  var  data = document.getElementById('data');
+  showDataClicked = !showDataClicked;
+  if(showDataClicked) {
+    data.innerText = `{
+      "name": "Genesis Node",
+      "timestamp": new Date(),
+      "data": "0",
+      "nodeNumber": "0",
+      "nodeId": "0",
+      "referenceNodeId": null,
+      "childReferenceNodeId": [
+        "1",
+        "2"
+      ],
+      "genesisReferenceNodeId": null,
+      "HashValue": null,
+      "parent": null,
+      "children": [
+        {
+          "name": "Child Node 1-1",
+          "timestamp": new Date(),
+          "data": "1-1",
+          "nodeNumber": "11",
+          "nodeId": "11",
+          "referenceNodeId": "0",
+          "childReferenceNodeId": [
+            "2"
+          ],
+          "genesisReferenceNodeId": null,
+          "HashValue": null,
+          "parent": "Genesis Node",
+          "children": [
+            {
+              "name": "Child Node 2-1",
+              "timestamp": new Date(),
+              "data": "2-1",
+              "nodeNumber": "22",
+              "nodeId": "22",
+              "referenceNodeId": "11",
+              "childReferenceNodeId": [],
+              "genesisReferenceNodeId": null,
+              "HashValue": null,
+              "parent": "Genesis Node",
+              "children": []
+            },
+            {
+              "name": "Child Node 2-2",
+              "timestamp": new Date(),
+              "data": "2-2",
+              "nodeNumber": "22",
+              "nodeId": "22",
+              "referenceNodeId": "11",
+              "childReferenceNodeId": [],
+              "genesisReferenceNodeId": null,
+              "HashValue": null,
+              "parent": "Genesis Node",
+              "children": []
+            }
+          ]
+        },
+        {
+          "name": "Child Node 1-2",
+          "timestamp": new Date(),
+          "data": "1-2",
+          "nodeNumber": "12",
+          "nodeId": "12",
+          "referenceNodeId": "0",
+          "childReferenceNodeId": [],
+          "genesisReferenceNodeId": null,
+          "HashValue": null,
+          "parent": "Genesis Node",
+          "children": []
+        }
+      ]
+    }`;
+  } else {
+    data.innerText = ``;
+  }
 };
 
 var showEncryptedData = () => {

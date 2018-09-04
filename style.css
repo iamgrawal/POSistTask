@@ -17,3 +17,14 @@
   stroke: #ccc;
   stroke-width: 2px;
 }
+
+button {
+  height: 50px;
+  width: 250px;
+  background: #83da24;
+}
+
+#data {
+  max-height: 200px;
+  overflow-y: scroll;
+}
