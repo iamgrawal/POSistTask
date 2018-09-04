@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>POSist Task</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="data">
+      <button onclick="showData()">Show Data</button>
+      <button onclick="showEncryptedData()">Show Encrypted Data</button>
+      <button onclick="hideEncryptedData()">Hide Encrypted Data</button>
+    </div>
+    <div id="data"></div>
+    <!-- load the d3.js library -->
+    <script src="http://d3js.org/d3.v3.min.js" ></script>
+    <script src=”http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js"></script>
+    <script src="./index.js" ></script>
+</body>
+</html>
